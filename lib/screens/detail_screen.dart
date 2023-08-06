@@ -71,7 +71,7 @@ class _DetailScreenState extends State<DetailScreen> {
                             ),
                             RatingBar(
                               initialRating:
-                                  (snapshot.data!.voteAverage).toDouble(),
+                                  (snapshot.data!.voteAverage / 2).toDouble(),
                               minRating: 0.0,
                               maxRating: 10.0,
                               direction: Axis.horizontal,
