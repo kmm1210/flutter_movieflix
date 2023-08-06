@@ -45,21 +45,7 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ),
                         Expanded(
-                          child: ListView.separated(
-                            scrollDirection: Axis.horizontal,
-                            itemCount: snapshot.data!.length,
-                            padding: const EdgeInsets.symmetric(
-                                vertical: 10, horizontal: 20),
-                            itemBuilder: (context, index) {
-                              var movie = snapshot.data![index];
-                              return MoviePoster(movie: movie);
-                              // return Text(webtoon.title);
-                            },
-                            separatorBuilder: (context, index) =>
-                                const SizedBox(
-                              width: 15,
-                            ),
-                          ),
+                          child: makePopluarMovieList(snapshot),
                         ),
                       ],
                     );
@@ -93,20 +79,7 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ),
                         Expanded(
-                          child: ListView.separated(
-                            scrollDirection: Axis.horizontal,
-                            itemCount: snapshot.data!.length,
-                            padding: const EdgeInsets.symmetric(
-                                vertical: 10, horizontal: 20),
-                            itemBuilder: (context, index) {
-                              var movie = snapshot.data![index];
-                              return MoviePosterMini(movie: movie);
-                            },
-                            separatorBuilder: (context, index) =>
-                                const SizedBox(
-                              width: 15,
-                            ),
-                          ),
+                          child: makeMovieList(snapshot),
                         ),
                       ],
                     );
@@ -140,20 +113,7 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ),
                         Expanded(
-                          child: ListView.separated(
-                            scrollDirection: Axis.horizontal,
-                            itemCount: snapshot.data!.length,
-                            padding: const EdgeInsets.symmetric(
-                                vertical: 10, horizontal: 20),
-                            itemBuilder: (context, index) {
-                              var movie = snapshot.data![index];
-                              return MoviePosterMini(movie: movie);
-                            },
-                            separatorBuilder: (context, index) =>
-                                const SizedBox(
-                              width: 15,
-                            ),
-                          ),
+                          child: makeMovieList(snapshot),
                         ),
                       ],
                     );
@@ -170,5 +130,34 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
-}
 
+  ListView makeMovieList(AsyncSnapshot<List<MovieModel>> snapshot) {
+    return ListView.separated(
+      scrollDirection: Axis.horizontal,
+      itemCount: snapshot.data!.length,
+      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+      itemBuilder: (context, index) {
+        var movie = snapshot.data![index];
+        return MoviePosterMini(movie: movie);
+      },
+      separatorBuilder: (context, index) => const SizedBox(
+        width: 15,
+      ),
+    );
+  }
+
+  ListView makePopluarMovieList(AsyncSnapshot<List<MovieModel>> snapshot) {
+    return ListView.separated(
+      scrollDirection: Axis.horizontal,
+      itemCount: snapshot.data!.length,
+      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+      itemBuilder: (context, index) {
+        var movie = snapshot.data![index];
+        return MoviePoster(movie: movie);
+      },
+      separatorBuilder: (context, index) => const SizedBox(
+        width: 15,
+      ),
+    );
+  }
+}

@@ -4,8 +4,8 @@ class MovieCollectionModel {
   final String? backdropPath;
 
   MovieCollectionModel.fromJson(Map<String, dynamic> json)
-      : id = json["id"],
-        name = json["name"],
-        posterPath = json["posterPath"],
-        backdropPath = json["backdrop_path"];
+      : id = json["id"] ?? 0,
+        name = json["name"] ?? "",
+        posterPath = json["posterPath"] ?? "",
+        backdropPath = json["backdrop_path"] ?? "";
 }

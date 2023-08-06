@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter_movieflix/models/movie_detail_model.dart';
 import 'package:flutter_movieflix/models/movie_model.dart';
 import 'package:http/http.dart' as http;
 
@@ -29,7 +30,7 @@ class ApiService {
       if (data.containsKey("results")) {
         final List<dynamic> movies = data["results"];
         for (var movie in movies) {
-          movieInstances.add(MovieModel.fromJson(movie));
+          movieInstances.add(MovieModel.fromJson(movie,MovieType.popular));
         }
       }
       return movieInstances;
@@ -46,7 +47,7 @@ class ApiService {
       if (data.containsKey("results")) {
         final List<dynamic> movies = data["results"];
         for (var movie in movies) {
-          movieInstances.add(MovieModel.fromJson(movie));
+          movieInstances.add(MovieModel.fromJson(movie,MovieType.play));
         }
       }
       return movieInstances;
@@ -63,7 +64,7 @@ class ApiService {
       if (data.containsKey("results")) {
         final List<dynamic> movies = data["results"];
         for (var movie in movies) {
-          movieInstances.add(MovieModel.fromJson(movie));
+          movieInstances.add(MovieModel.fromJson(movie,MovieType.comingsoon));
         }
       }
       return movieInstances;
@@ -71,12 +72,12 @@ class ApiService {
     throw Error();
   }
 
-  static Future<MovieModel> getMovieById(String id) async {
+  static Future<MovieDetailModel> getMovieDetailById(num id) async {
     final url = Uri.parse('$detailMovieUrl/$id');
     final response = await http.get(url);
     if (response.statusCode == 200) {
       final movie = jsonDecode(response.body);
-      return MovieModel.fromJson(movie);
+      return MovieDetailModel.fromJson(movie);
     }
     throw Error();
   }
