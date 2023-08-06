@@ -1,5 +1,5 @@
 class MovieGenreModel {
-  final int id;
+  final num id;
   final String name;
 
   MovieGenreModel.fromJson(Map<String, dynamic> json)

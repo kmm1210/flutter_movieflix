@@ -20,17 +20,19 @@ class ApiService {
   static const String detailMovieUrl =
       "https://movies-api.nomadcoders.workers.dev/movie?id=";
 
-
   static Future<List<MovieModel>> getPopularMovies() async {
     List<MovieModel> movieInstances = [];
     final url = Uri.parse(popularMoviesUrl);
     final response = await http.get(url);
     if (response.statusCode == 200) {
-      final List<dynamic> movies = jsonDecode(response.body);
-      for (var movie in movies) {
-        movieInstances.add(MovieModel.fromJson(movie));
+      final Map<String, dynamic> data = jsonDecode(response.body);
+      if (data.containsKey("results")) {
+        final List<dynamic> movies = data["results"];
+        for (var movie in movies) {
+          movieInstances.add(MovieModel.fromJson(movie));
+        }
       }
-      return [];
+      return movieInstances;
     }
     throw Error();
   }
@@ -40,11 +42,14 @@ class ApiService {
     final url = Uri.parse(playMoviesUrl);
     final response = await http.get(url);
     if (response.statusCode == 200) {
-      final List<dynamic> movies = jsonDecode(response.body);
-      for (var movie in movies) {
-        movieInstances.add(MovieModel.fromJson(movie));
+      final Map<String, dynamic> data = jsonDecode(response.body);
+      if (data.containsKey("results")) {
+        final List<dynamic> movies = data["results"];
+        for (var movie in movies) {
+          movieInstances.add(MovieModel.fromJson(movie));
+        }
       }
-      return [];
+      return movieInstances;
     }
     throw Error();
   }
@@ -54,11 +59,14 @@ class ApiService {
     final url = Uri.parse(comingsoonMoviesUrl);
     final response = await http.get(url);
     if (response.statusCode == 200) {
-      final List<dynamic> movies = jsonDecode(response.body);
-      for (var movie in movies) {
-        movieInstances.add(MovieModel.fromJson(movie));
+      final Map<String, dynamic> data = jsonDecode(response.body);
+      if (data.containsKey("results")) {
+        final List<dynamic> movies = data["results"];
+        for (var movie in movies) {
+          movieInstances.add(MovieModel.fromJson(movie));
+        }
       }
-      return [];
+      return movieInstances;
     }
     throw Error();
   }

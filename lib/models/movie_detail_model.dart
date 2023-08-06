@@ -6,7 +6,7 @@ import 'package:flutter_movieflix/models/production_country_model.dart';
 
 class MovieDetailModel extends MovieModel {
   final List<MovieCollectionModel> belongsToCollection;
-  final int budget;
+  final num budget;
   final List<MovieGenreModel> genres;
   final String homepage, imdbId;
   final List<ProductionCompanyModel> productionCompanies;

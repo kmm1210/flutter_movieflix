@@ -1,12 +1,13 @@
 class MovieModel {
-  final String adult, backdropPath;
-  final List<int> genreIds;
-  final int id;
+  final bool adult;
+  final String backdropPath;
+  final List<dynamic> genreIds;
+  final num id;
   final String originalLanguage, originalTitle, overview;
-  final int popularity;
+  final num popularity;
   final String posterPath, releaseDate, title;
   final bool video;
-  final int voteAverage, voteCount;
+  final num voteAverage, voteCount;
 
   MovieModel.fromJson(Map<String, dynamic> json)
       : adult = json["adult"],

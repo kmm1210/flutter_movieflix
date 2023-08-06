@@ -1,5 +1,5 @@
 class MovieCollectionModel {
-  final int id;
+  final num id;
   final String name, posterPath;
   final String? backdropPath;
 

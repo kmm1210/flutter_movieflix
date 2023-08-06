@@ -1,5 +1,5 @@
 class ProductionCompanyModel {
-  final int id;
+  final num id;
   final String logoPath, name, originCountry;
 
   ProductionCompanyModel.fromJson(Map<String, dynamic> json)
