@@ -5,4 +5,4 @@
 />](https://github.com/kmm1210/flutter_movieflix/assets/26448707/dec9186c-4791-426a-a35c-1228fa829edb)
 
 ## 우수 졸업자
-<a><img src="assets/top_student.png" width="360" height="900"></a>
+<a><img src="assets/top_student.png" width="360" height="1250"></a>
