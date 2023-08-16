@@ -1,16 +1,8 @@
-# flutter_movieflix
+## 완성본 mp4
+<!-- [![Watch the video](https://img.youtube.com/vi/APOPm01BVrk/hqdefault.jpg)](https://www.youtube.com/embed/APOPm01BVrk) -->
 
-A new Flutter project.
+[<img src="assets/movieFlix.png" width="340" height="600"
+/>](https://github.com/kmm1210/flutter_movieflix/assets/26448707/dec9186c-4791-426a-a35c-1228fa829edb)
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 우수 졸업자
+<a><img src="assets/top_student.png" width="360" height="900"></a>
